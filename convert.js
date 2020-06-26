@@ -19,6 +19,7 @@ const uuidViews = {
 				: hex.value.trim().padStart(32, '0');
 			uuid.setBigUint64(0, BigInt('0x' + hexText.substring(0, 16)), false);
 			uuid.setBigUint64(8, BigInt('0x' + hexText.substring(16)), false);
+			console.log("hex parse");
 		},
 		unparse: ([hex], {groupSizes}) => {
 			const hexText =
@@ -46,6 +47,7 @@ const uuidViews = {
 			if (least.validity.valid) {
 				uuid.setBigInt64(8, BigInt(least.value), false);
 			}
+			console.log("halves parse");
 		},
 		unparse: ([most, least]) => {
 			most.value = uuid.getBigInt64(0, false);
@@ -62,6 +64,7 @@ const uuidViews = {
 					uuid.setInt32(i * 4, Number(array[i].value), false);
 				}
 			}
+			console.log("array parse");
 		},
 		unparse: array => {
 			for (let i = 0; i < array.length; i++) {
