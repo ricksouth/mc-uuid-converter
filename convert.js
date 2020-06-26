@@ -1,3 +1,5 @@
+console.log(1);
+
 const uuidBytes = new Uint8Array(16);
 const uuid = new DataView(uuidBytes.buffer);
 
