@@ -1,4 +1,4 @@
-console.log(1);
+console.log(2);
 
 const uuidBytes = new Uint8Array(16);
 const uuid = new DataView(uuidBytes.buffer);
@@ -88,6 +88,7 @@ function callUUIDViewEvent(view, event) {
 }
 
 function updateUUIDViews(changedViewId) {
+	console.log("updateUUIDViews");
 	const changedView = uuidViews[changedViewId];
 	if (changedView) {
 		callUUIDViewEvent(changedView, 'parse');
